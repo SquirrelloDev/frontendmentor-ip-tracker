@@ -1,18 +1,19 @@
-import {MapContainer, Marker, Popup, TileLayer} from "react-leaflet";
+import {MapContainer, Marker, Popup, TileLayer, useMap} from "react-leaflet";
 import classes from "../sass/Map.module.scss";
 import {iconMarker} from "./UI/MarkerIcon";
+import {useEffect} from "react";
+import MapMarker from "./UI/MapMarker";
 
-const MapWrapper = () => {
-
+const MapWrapper = ({location}) => {
+    const {lat,lng} = location;
   return(
       <section className={classes.map}>
-          <MapContainer className={classes.map__container} center={[51.505, -0.09]} zoom={13} scrollWheelZoom={false}>
+          <MapContainer className={classes.map__container} center={[51, -0.9]} zoom={13} scrollWheelZoom={false}>
               <TileLayer
                   attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                   url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
               />
-              <Marker position={[51.505, -0.09]} icon={iconMarker}>
-              </Marker>
+              <MapMarker lat={lat} lng={lng}/>
           </MapContainer>
       </section>
   )

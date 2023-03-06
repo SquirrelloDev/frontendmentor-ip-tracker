@@ -1,13 +1,20 @@
 import IPBoxItem from "./UI/IPBoxItem";
 import classes from "../sass/Menu.module.scss";
+import {useEffect} from "react";
+import useHttp from "../hooks/use-http";
 
-const IPBox = () => {
+const IPBox = (props) => {
+    const {isLoading} = useHttp();
+    const {ip,location,isp} = props.ipInformation;
   return (
       <div className={classes['menu__ip-box']}>
-        <IPBoxItem title={'Ip address'} value={'192.168.174.101'}/>
-        <IPBoxItem title={'Location'} value={'London'}/>
-        <IPBoxItem title={'timezone'} value={'UTC -5:00'}/>
-        <IPBoxItem title={'isp'} value={'SpaceX Starink'}/>
+          {isLoading ? <p>Tracking ip...</p> : <>
+              <IPBoxItem title={'Ip address'} value={ip ? ip : ''}/>
+              <IPBoxItem title={'Location'} value={location ? `${location.city} ${location.region}` : ''}/>
+              <IPBoxItem title={'timezone'} value={location ? location.timezone : ''}/>
+              <IPBoxItem title={'isp'} value={isp ? isp : ''}/>
+          </>}
+
       </div>
   )
 }
