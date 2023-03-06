@@ -1,11 +1,11 @@
 import Menu from "./components/Menu";
-import MapContainer from "./components/MapContainer";
+import MapWrapper from "./components/MapWrapper";
 
 function App() {
   return (
     <>
         <Menu/>
-        <MapContainer/>
+        <MapWrapper/>
     </>
   );
 }
