@@ -1,8 +1,12 @@
+import Menu from "./components/Menu";
+import MapContainer from "./components/MapContainer";
+
 function App() {
   return (
-    <main className="App">
-
-    </main>
+    <>
+        <Menu/>
+        <MapContainer/>
+    </>
   );
 }
 
