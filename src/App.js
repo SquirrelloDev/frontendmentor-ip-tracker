@@ -19,6 +19,7 @@ function App() {
             const userIp = await getUserIP();
             const data = await getIP({ipAddr: userIp.ip, domain: ''})
             setIpInfo(data);
+            setLocation(data.location);
         }
         getUserIpAddr();
 
