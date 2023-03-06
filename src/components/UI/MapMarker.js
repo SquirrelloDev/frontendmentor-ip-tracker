@@ -9,6 +9,6 @@ const MapMarker = ({lat, lng}) => {
     setPosition(L.latLng(lat ? lat : 50,lng ? lng : 50))
     map.flyTo(L.latLng( lat ? lat : 50,lng ? lng : 50), map.getZoom());
   }, [lat,lng]);
-  return <Marker position={position ? position : [51, -0.9]} icon={iconMarker}></Marker>
+  return <Marker position={position ? position : [50, 50]} icon={iconMarker}></Marker>
 }
 export default MapMarker;

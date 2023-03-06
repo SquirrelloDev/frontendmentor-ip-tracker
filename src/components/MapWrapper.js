@@ -8,7 +8,7 @@ const MapWrapper = ({location}) => {
     const {lat,lng} = location;
   return(
       <section className={classes.map}>
-          <MapContainer className={classes.map__container} center={[51, -0.9]} zoom={13} scrollWheelZoom={false}>
+          <MapContainer className={classes.map__container} center={[50, 50]} zoom={13} scrollWheelZoom={false}>
               <TileLayer
                   attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                   url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
