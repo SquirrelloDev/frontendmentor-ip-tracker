@@ -2,7 +2,6 @@ import {useCallback, useState} from "react";
 
 const useHttp = () => {
     const [isLoading, setIsLoading] = useState(false);
-    const [ip, setIp] = useState(null);
     const getUserIP = useCallback( async () => {
         // todo: modify loading state before returning data
         setIsLoading(true);
@@ -30,11 +29,13 @@ const useHttp = () => {
         }catch (e) {
             console.error(e.message || 'Something went wrong!')
         }
-        setIsLoading(false);
+        finally {
+            setIsLoading(false);
+        }
+
 
     }, []);
     return {
-        ip,
         isLoading,
         getIP,
         getUserIP

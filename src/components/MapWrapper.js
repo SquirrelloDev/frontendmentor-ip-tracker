@@ -1,7 +1,5 @@
-import {MapContainer, Marker, Popup, TileLayer, useMap} from "react-leaflet";
+import {MapContainer, TileLayer} from "react-leaflet";
 import classes from "../sass/Map.module.scss";
-import {iconMarker} from "./UI/MarkerIcon";
-import {useEffect} from "react";
 import MapMarker from "./UI/MapMarker";
 
 const MapWrapper = ({location}) => {

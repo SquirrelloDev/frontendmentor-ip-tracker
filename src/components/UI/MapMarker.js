@@ -8,7 +8,7 @@ const MapMarker = ({lat, lng}) => {
   useEffect(() => {
     setPosition(L.latLng(lat ? lat : 50,lng ? lng : 50))
     map.flyTo(L.latLng( lat ? lat : 50,lng ? lng : 50), map.getZoom());
-  }, [lat,lng]);
+  }, [lat,lng, map]);
   return <Marker position={position ? position : [50, 50]} icon={iconMarker}></Marker>
 }
 export default MapMarker;

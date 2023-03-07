@@ -10,7 +10,7 @@ const Menu = (props) => {
       <section className={classes.menu}>
           <h1>IP Address Tracker</h1>
           <Input getIpInfo={getIpInfo}/>
-          <IPBox ipInformation={props.ip}/>
+          <IPBox ipInformation={props.ip} isLoading={props.isLoading}/>
       </section>
   )
 }

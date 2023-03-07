@@ -6,7 +6,7 @@ import useHttp from "./hooks/use-http";
 function App() {
     const [ipInfo, setIpInfo] = useState({});
     const [location, setLocation] = useState([]);
-    const {getUserIP,getIP} = useHttp()
+    const {getUserIP,getIP, isLoading} = useHttp()
 
     const setIp = useCallback( (info) => {
       setIpInfo(info);
@@ -25,7 +25,7 @@ function App() {
     },[getIP, getUserIP])
   return (
     <>
-        <Menu ip={ipInfo} getIpInfo={setIp}/>
+        <Menu ip={ipInfo} getIpInfo={setIp} isLoading={isLoading}/>
         <MapWrapper location={location}/>
     </>
   );

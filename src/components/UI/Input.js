@@ -1,10 +1,9 @@
 import arrow from '../../img/icon-arrow.svg'
 import classes from "../../sass/Menu.module.scss";
-import {useRef, useState} from "react";
+import {useRef} from "react";
 import useHttp from "../../hooks/use-http";
 const Input = (props) => {
     const regexIp = new RegExp('^(?:[0-9]{1,3}\\.){3}[0-9]{1,3}$')
-    const [ipInfo, setIpInfo] = useState({});
     const inputRef = useRef();
     const {isLoading, getIP} = useHttp();
     const sendRequest = async (e) => {
