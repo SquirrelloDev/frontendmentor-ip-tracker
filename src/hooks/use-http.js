@@ -3,7 +3,6 @@ import {useCallback, useState} from "react";
 const useHttp = () => {
     const [isLoading, setIsLoading] = useState(false);
     const getUserIP = useCallback( async () => {
-        // todo: modify loading state before returning data
         setIsLoading(true);
         try{
             const response = await fetch(`https://api.ipify.org?format=json`, {headers: {'Content-Type': 'text/plain'}});

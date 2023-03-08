@@ -18,6 +18,8 @@
     display: flex;
     justify-content: center;
     width: 100%;
+    max-width: 800px;
+    margin-top: 1em;
     &__input{
       padding: 0 .75em;
       width: 70%;
@@ -33,6 +35,9 @@
       border-bottom-right-radius: 15px;
       font-size: $text-input;
       background-color: $very-dark-gray;
+      &:hover{
+        background-color: $button-hover;
+      }
     }
   }
   &__ip-box{
@@ -43,6 +48,9 @@
     left: 50%;
     transform: translate(-50%, -50%);
     width: 75%;
+    max-width: 850px;
+    display: flex;
+    flex-direction: column;
     background-color: #fff;
     border-radius: 15px;
     box-shadow: 0px 4px 15px $dark-gray;
@@ -56,6 +64,53 @@
         font-size: 1rem;
         color: $dark-gray;
         text-transform: uppercase;
+      }
+      h3{
+        font-size: 1.6rem;
+      }
+    }
+  }
+}
+@media (min-width: 768px) {
+  .menu{
+    &__ip-box{
+      flex-direction: row;
+      justify-content: space-between;
+      &__item{
+        border-right: 1px solid $dark-gray;
+        padding-right: 2em;
+        margin-left: 2em;
+        &:last-child{
+          border: none
+        }
+        h2,h3{
+          text-align: left;
+        }
+        h2{
+          font-size: 1.3rem;
+        }
+        h3{
+          margin-right: .2em;
+          //font-size: 2.2rem;
+        }
+      }
+    }
+  }
+}
+@media (min-width: 992px) {
+  .menu{
+    background-image: url('../img/pattern-bg-desktop.png');
+    h1{
+      font-size: 3rem;
+    }
+    &__ip-box{
+      &__item{
+        h2{
+          font-size: 1.4rem;
+        }
+        h3{
+          font-size: 2.2rem;
+        }
       }
     }
   }
