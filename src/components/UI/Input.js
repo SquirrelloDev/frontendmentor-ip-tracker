@@ -13,7 +13,7 @@ const Input = (props) => {
     }
   return (
       <div className={classes['menu__input-box']}>
-          <input ref={inputRef} type={"text"} className={classes['menu__input-box__input']}/>
+          <input ref={inputRef} type={"text"} className={classes['menu__input-box__input']} placeholder={"Search for any IP address or domain"}/>
           <button type={'submit'} onClick={sendRequest} className={classes['menu__input-box__button']}><img src={arrow} alt={"Proceed action"} /></button>
       </div>
 
